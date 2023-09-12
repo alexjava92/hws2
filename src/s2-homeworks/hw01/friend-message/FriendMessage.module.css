@@ -1,0 +1,74 @@
+/* Основной контейнер для сообщения друга */
+.friendMessage {
+    flex-direction: column;
+    padding: 10px;
+    margin: 5px 0;
+    align-items: flex-start; /* Выравниваем сообщение друга слева */
+    position: relative;
+}
+
+/* Контейнер для изображения и текста сообщения друга */
+.friendImageAndText {
+    display: flex;
+    align-items: center;
+    flex-direction: row; /* Стандартное направление для сообщения друга */
+}
+
+/* Стили для изображения аватара друга */
+.friendImageAndText img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-left: 10px; /* Отступ слева для аватара друга */
+    object-fit: cover;
+    padding: 10px;
+}
+
+/* Контейнер для текста сообщения и имени друга */
+.friendText {
+    position: relative;
+    max-width: 80%;
+    display: flex;
+    flex-direction: column;
+    background-color: #eee; /* Светлый фон для сообщения друга */
+    border-radius: 5px;
+    padding: 8px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    white-space: pre-wrap;
+}
+
+/* Маленький треугольник у сообщения друга */
+.friendText:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent #eee; /* Цвет треугольника, соответствующий фону сообщения */
+    left: -10px; /* Располагаем треугольник слева от сообщения */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Стили для имени друга */
+.friendName {
+    font-weight: bold;
+    color: #333; /* Темный цвет для имени друга */
+    margin-bottom: 5px;
+}
+
+/* Стили для текста сообщения друга */
+.friendMessageText {
+    color: #666; /* Средний оттенок серого для текста сообщения друга */
+}
+
+/* Стили для времени отправки сообщения друга */
+.friendTime {
+    position: absolute;
+    bottom: 0px;
+    left: 40px; /* Выравнивание времени по левому краю */
+    color: #888;
+    font-size: 12px;
+    white-space: nowrap;
+}

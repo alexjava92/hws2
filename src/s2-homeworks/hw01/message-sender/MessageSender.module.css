@@ -1,0 +1,47 @@
+.sendForm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+/* Стили для textarea */
+textarea {
+    width: 976px;
+    height: 40px;
+
+    border-radius: 20px;
+    background: #F5F7FB;
+    border: none; /* Удалить стандартные стили рамки */
+    padding: 5px 15px; /* Добавить немного внутреннего отступа для удобства */
+    font-family: inherit; /* Чтобы шрифт был таким же, как в остальной части вашего документа */
+    box-shadow: 0px 1px 2px 0px #1D21261A, 0px 5px 20px 0px #1D212608; /* Объединяем два значения box-shadow */
+    outline: none; /* Убрать выделение при фокусе */
+    resize: none; /* Отключить изменение размера */
+}
+
+
+.button {
+    width: 120px;
+    height: 40px;
+    border-radius: 20px;
+    background: #0066CC;
+    font-family: 'Montserrat', sans-serif;  /* Убедитесь, что шрифт Montserrat подключен к вашему проекту или замените на доступный */
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: 0em;
+
+    border: none;   /* Убираем стандартные рамки кнопки */
+    color: white;   /* Устанавливаем цвет текста на кнопке */
+    cursor: pointer; /* Изменяет курсор на руку при наведении */
+
+}
+
+.button:hover {
+    background: #0055aa;  /* Немного темнее основного цвета для эффекта при наведении */
+}
+
+.button:active {
+
+}
