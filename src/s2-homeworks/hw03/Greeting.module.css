@@ -1,10 +1,14 @@
 .greetingForm {
+
 }
 
 .inputAndButtonContainer {
+    display: flex;
+
 }
 
 .error {
+    color: red;
 }
 
 .input {
@@ -14,6 +18,7 @@
 }
 
 .errorInput {
+    border-color: red !important; /* Для переопределения стилей Material-UI */
 }
 
 .button {
