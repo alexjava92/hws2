@@ -14,20 +14,18 @@ type GreetingPropsType = {
 }
 
 // презентационная компонента (для верстальщика)
-const Greeting: React.FC<GreetingPropsType> = (
-    {
-        name,
-        setNameCallback,
-        addUser,
-        onEnter,
-        onBlur,
-        error,
-        totalUsers,
-        lastUserName,
-    } // деструктуризация пропсов
-) => {
-    const inputClass = `${s.input} ${error ? s.errorInput : ''}`; // need to fix with (?:)
-    const isError =Boolean(error)
+const Greeting: React.FC<GreetingPropsType> = ({
+                                                   name,
+                                                   setNameCallback,
+                                                   addUser,
+                                                   onEnter,
+                                                   onBlur,
+                                                   error,
+                                                   totalUsers,
+                                                   lastUserName,
+                                               }) => {
+    const inputClass = `${s.input} ${error ? s.errorInput : ''}`;
+
     return (
         <div id={'hw3-form'} className={s.greetingForm}>
             <div className={s.text}>
@@ -40,7 +38,6 @@ const Greeting: React.FC<GreetingPropsType> = (
             <div className={s.inputAndButtonContainer}>
                 <div>
                     <TextField
-
                         id={'hw3-input'}
                         value={name}
                         onChange={setNameCallback}
@@ -55,15 +52,14 @@ const Greeting: React.FC<GreetingPropsType> = (
                     </div>
                 </div>
 
-                <Button
+                <button
                     id={'hw3-button'}
                     onClick={addUser}
-                    variant="contained"
                     className={s.button}
                     disabled={!name.trim()}
                 >
                     add
-                </Button >
+                </button>
             </div>
 
             {lastUserName && (
@@ -75,4 +71,4 @@ const Greeting: React.FC<GreetingPropsType> = (
     )
 }
 
-export default Greeting
+export default Greeting;
