@@ -37,15 +37,14 @@ const Greeting: React.FC<GreetingPropsType> = ({
 
             <div className={s.inputAndButtonContainer}>
                 <div>
-                    <TextField
+                    <input
                         id={'hw3-input'}
                         value={name}
                         onChange={setNameCallback}
                         className={inputClass}
                         onKeyDown={onEnter}
                         onBlur={onBlur}
-                        variant="outlined"
-                        error={Boolean(error)}
+
                     />
                     <div id={'hw3-error'} className={s.error}>
                         {error}

@@ -12,25 +12,54 @@
 }
 
 .input {
+    padding: 10px;
+    border: 2px solid #E0E0E0;
+    border-radius: 4px;
+    width: calc(100% - 20px);
+    box-sizing: border-box;
+    margin-right: 10px;
+    font-size: 16px;
 }
 
 .input:focus {
+
+    outline: none;
 }
 
 .errorInput {
-    border-color: red !important; /* Для переопределения стилей Material-UI */
+    border-color: red;
 }
 
 .button {
+    background-color: #0065ca;
+    border: 2px solid #0065ca;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.button:hover {
+    background-color: #005bb5;  /* Немного темнее, чем основной цвет кнопки */
 }
 
 .button:focus {
+    outline: none;
+    border-color: #005bb5;  /* Соответствие цвета границы цвету при наведении */
 }
 
 .button:active {
+    background-color: #0050a0;  /* Еще темнее при активации */
 }
 
 .button:disabled {
+    background-color: #E0E0E0;
+    border-color: #E0E0E0;
+    cursor: not-allowed;
 }
 
 .text {
