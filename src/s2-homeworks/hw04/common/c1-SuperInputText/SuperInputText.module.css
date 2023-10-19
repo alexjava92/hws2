@@ -1,20 +1,40 @@
 .input:focus {
+    border-color: #2D77A9; /* или другой цвет, который вы хотите */
 }
 
 .input {
+    padding: 10px 15px;
+    border: 1px solid #B0B0B0;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.3s ease-in-out;
+    position: relative; /* добавлено */
+    z-index: 1; /* добавлено */
 }
 
 .inputWrapper {
+    position: relative;
+    max-width: 300px; /* или любой другой размер */
 }
 
 .superInput {
 }
 
 .errorInput {
+    border-color: red;
+    margin-top: 0px; /* добавлено: отступ, чтобы освободить место для сообщения об ошибке */
 }
 
 .errorInput:focus {
+    border-color: darkred;
 }
 
 .error {
+    position: absolute;
+    left: 0;
+    bottom: 100%; /* изменено с top на bottom */
+    color: red;
+    font-size: 12px;
+    margin-bottom: 5px; /* изменено с margin-top на margin-bottom */
+    z-index: 2; /* добавлено */
 }

@@ -1,36 +1,55 @@
 .button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    background: linear-gradient(90deg, #2D77A9, #1F6091);
+    color: white;
+    outline: none;
 }
 
-.disabled {
+.button:hover {
+    background: linear-gradient(90deg, #1F6091, #2D77A9);
 }
 
-.secondary {
-}
-
-.default {
-}
-
-.red {
-}
-
-.default:hover {
-}
-
-.red:hover {
-}
-
-.secondary:hover {
-}
-
-
-.default:active {
-}
-
-.secondary:active {
-}
-
-.red:active {
+.button:active {
+    transform: scale(0.95);
 }
 
 .button:disabled {
+    cursor: not-allowed;
+    background: #B0B0B0;
+    color: #7A7A7A;
+}
+.disabled {
+    cursor: not-allowed;
+    background: #B0B0B0;
+    color: #7A7A7A;
+}
+
+
+.default {
+    /* Дополнительные стили для кнопки "default", если они необходимы */
+}
+
+.default:hover {
+    /* стили для состояния наведения на кнопку "default" */
+}
+
+.red {
+    background: linear-gradient(90deg, #DB504A, #E74B37);
+}
+
+.red:hover {
+    background: linear-gradient(90deg, #E74B37, #DB504A);
+}
+
+.secondary {
+    background: linear-gradient(90deg, #3E8D3E, #2F772F);
+}
+
+.secondary:hover {
+    background: linear-gradient(90deg, #2F772F, #3E8D3E);
 }
