@@ -1,15 +1,37 @@
 .radio {
+    appearance: none;
+
 }
 
 .radio::before {
+    content: '𐤏';
 }
 
 
 .radio:checked::before {
+    content: '◉';
 }
 
 .label {
+    display: flex;
+    gap: 10px;
+
+    padding-top: 10px;
+
 }
 
 .options {
+
+
+}
+
+.spanClassName {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+
+
+    margin-top:  2px;
 }

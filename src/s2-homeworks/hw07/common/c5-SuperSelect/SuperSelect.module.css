@@ -1,9 +1,48 @@
 .select {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+
+    background: #FFFFFF;
+    border: 1px solid #C2C2C2;
+    border-radius: 2px;
+    width: 170px;
+
+    padding: 5px;
+    margin-top: 10px;
+
+    outline: none;
+    appearance: none;
+    background: url("chevron-down.svg") no-repeat;
+    background-position-x: right;
+    background-position-y: center;
+
+
 }
 
 .select:focus {
+    background: url("chevron-up.svg") no-repeat;
+    background-position-x: right;
+    background-position-y: center;
 }
 
 
+.option {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+
+
+}
+
+.option:checked {
+
+}
+
 .option:hover {
+
 }

@@ -24,55 +24,53 @@ type SuperRadioPropsType = Omit<DefaultRadioPropsType, 'type'> & {
 }
 
 const SuperRadio: React.FC<SuperRadioPropsType> = ({
-    id,
-    name,
-    className,
-    options,
-    value,
-    onChange,
-    onChangeOption,
-    spanProps,
-    ...restProps
-}) => {
+                                                       id,
+                                                       name,
+                                                       className,
+                                                       options,
+                                                       value,
+                                                       onChange,
+                                                       onChangeOption,
+                                                       spanProps,
+                                                       ...restProps
+                                                   }) => {
     const onChangeCallback = (e: ChangeEvent<HTMLInputElement>) => {
-        // делают студенты
-        // `value` радиокнопки должно соответствовать `value` опции, а не `id`
-        const selectedOptionValue = e.target.value; // Получаем `value` выбранной опции
-        const selectedOption = options?.find(o => o.value === selectedOptionValue); // Ищем объект опции по `value`
+        if (onChangeOption) {
+            onChangeOption(e.currentTarget.value)
 
-        // Проверяем, существует ли `onChangeOption` и вызываем ее с `value` выбранной опции
-        if (onChangeOption && selectedOption) {
-            onChangeOption(selectedOption.value);
         }
+        console.log(e.currentTarget.checked)
     }
 
     const finalRadioClassName = s.radio + (className ? ' ' + className : '')
     const spanClassName = s.span + (spanProps?.className ? ' ' + spanProps.className : '')
 
+
     const mappedOptions: any[] = options
         ? options.map((o) => (
-              <label key={name + '-' + o.id} className={s.label}>
-                  <input
-                      id={id + '-input-' + o.value}
-                      className={finalRadioClassName}
-                      type={'radio'}
-                      // name, checked, value делают студенты
-                      name={name} // устанавливаем имя группы радиокнопок
-                      value={o.value} // значение радиокнопки
-                      checked={value === o.value}
+            <label key={name + '-' + o.id} className={s.label}>
+                <input
+                    id={id + '-input-' + o.id}
+                    className={finalRadioClassName}
+                    type={'radio'}
+                    name={'radioGroup'}
+                    value={o.id}
+                    checked={o.id == value}
 
-                      onChange={onChangeCallback}
-                      {...restProps}
-                  />
-                  <span
-                      id={id + '-span-' + o.value}
-                      {...spanProps}
-                      className={spanClassName}
-                  >
+
+
+                    onChange={onChangeCallback}
+                    {...restProps}
+                />
+                <span
+                    id={id + '-span-' + o.id}
+                    {...spanProps}
+                    className={spanClassName}
+                >
                       {o.value}
                   </span>
-              </label>
-          ))
+            </label>
+        ))
         : []
 
     return <div className={s.options}>{mappedOptions}</div>
