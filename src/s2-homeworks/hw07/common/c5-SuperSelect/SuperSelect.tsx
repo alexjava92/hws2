@@ -28,15 +28,25 @@ const SuperSelect: React.FC<SuperSelectPropsType> = ({
                   id={'hw7-option-' + o.id}
                   className={s.option}
                   key={o.id}
-                  value={o.id}
+
               >
                   {o.value}
+
               </option>
           ))
         : [] // map options with key
 
     const onChangeCallback = (e: ChangeEvent<HTMLSelectElement>) => {
         // делают студенты
+        // Мы ожидаем, что `options` это массив объектов с `id` и `value`
+        const selectedOptionId = e.target.value; // Получаем `value` выбранной опции
+        const selectedOption = options?.find(o => o.value === selectedOptionId); // Ищем объект опции по `id`
+
+        // Проверяем, существует ли `onChangeOption` и вызываем ее с `value` выбранной опции
+        if (onChangeOption && selectedOption) {
+            onChangeOption(selectedOption.value);
+        }
+
     }
 
     const finalSelectClassName = s.select + (className ? ' ' + className : '')
