@@ -19,7 +19,7 @@ export type UserType = {
 
 const initialPeople: UserType[] = [
     // студенты могут поменять имя/возраст/количество объектов, _id должны быть целочисленные
-    {_id: 0, name: 'Кот', age: 3},
+    {_id: 0, name: 'Макаров', age: 3},
     {_id: 1, name: 'Александр', age: 66},
     {_id: 2, name: 'Коля', age: 16},
     {_id: 3, name: 'Виктор', age: 44},
@@ -56,6 +56,7 @@ const HW8 = () => {
     return (
         <div id={'hw3'}>
             <div className={s2.hwTitle}>Homework #8</div>
+            <hr className={s2.hr8_1}/>
             <div className={s2.hw}>
                 <div className={s.container}>
                     <div className={s.buttonsContainer}>
@@ -85,8 +86,8 @@ const HW8 = () => {
                     <table id={'hw8-users'} className={s.users}>
                         <thead className={s.thead}>
                         <tr>
-                            <td className={s.nameCol}>Name</td>
-                            <td className={s.ageCol}>Age</td>
+                            <td className={s.nameCol + " " + s.colTitle}>Full name</td>
+                            <td className={s.ageCol + " " + s.colTitle}>Age</td>
                         </tr>
                         </thead>
 
@@ -94,6 +95,7 @@ const HW8 = () => {
                     </table>
                 </div>
             </div>
+            <hr className={s2.hr8_2}/>
         </div>
     )
 }
